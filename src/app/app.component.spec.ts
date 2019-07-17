@@ -2,13 +2,15 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { UsersModule } from './users/users.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        CoreModule
+        CoreModule,
+        UsersModule
       ],
       declarations: [
         AppComponent
