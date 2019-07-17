@@ -1,3 +1,16 @@
-<p>
-  users works!
-</p>
+<table *ngIf="usersList.length">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Job</th>
+    </tr>
+  </thead>
+  <body>
+    <tr *ngFor="let user of usersList">
+      <td>{{ user.name }}</td>
+      <td>{{ user.age }}</td>
+      <td>{{ user.job }}</td>
+    </tr>
+  </body>
+</table>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserModel } from '../models/user.model';
+import { UserMockService } from '../services/user-mock.service';
 
 @Component({
   selector: 'lel-users',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  public usersList: UserModel[];
+
+  constructor(
+    private userService: UserMockService
+  ) { }
 
   ngOnInit() {
+    this.userService.getAllUsers().subscribe(data => this.usersList = data);
   }
 
 }

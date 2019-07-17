@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UsersComponent } from './users.component';
+import { USERS } from '../models/user.data';
 
 describe('UsersComponent', () => {
   let component: UsersComponent;
@@ -21,5 +22,10 @@ describe('UsersComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should create users list', () => {
+    expect(component.usersList).not.toBeNull();
+    expect(component.usersList.length).toEqual(USERS.length);
   });
 });
